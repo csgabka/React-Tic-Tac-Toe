@@ -1,0 +1,13 @@
+.Status {
+  background-color: darkgrey;
+  padding: 8px;
+  margin: 10px;
+  border: 1px grey solid;
+  border-radius: 25px;
+  box-shadow: 2px 1px grey;
+  box-sizing: border-box;
+}
+
+.Status p {
+  color: black;
+}
