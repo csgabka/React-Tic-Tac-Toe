@@ -17,24 +17,28 @@ class Board extends Component {
       '6': null,
       '7': null,
       '8': null
-    },
-    currentPlayer: 'X'
+    }
   }
 
     clickHandler = (index) => {
        let updatedGrids = {...this.state.grids};
-       updatedGrids[index] = this.state.currentPlayer;
+       updatedGrids[index] = 'X';
        this.setState({grids: updatedGrids});
-       console.log(updatedGrids);
+       this.props.setPlayer();
     }
 
 render() {
   let grids = Object.values(this.state.grids)
-  .map((value, index) => <Grid clicked={(event) => this.clickHandler(index)} key={index} value={value}/>
+  .map((value, index) => <Grid
+  clicked={(event) => this.clickHandler(index)}
+  key={index}
+  value={value}
+  currentPlayer={this.props.player}
+  />
   );
 
   return (
-    <div  className={classes.Board}>
+    <div className={classes.Board}>
       {grids}
     </div>
 );

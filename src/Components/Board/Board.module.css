@@ -1,8 +1,9 @@
 .Board {
+  padding: 5px;
+  margin: auto;
+  width: 270px;
+  height: 270px;
   display: grid;
-  grid-template-columns: 90px 90px 90px;
-  grid-template-rows: 90px 90px 90px;
-  background-color: #2196F3;
-  padding: 10px;
-
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
 }
