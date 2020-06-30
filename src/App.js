@@ -9,9 +9,13 @@ class App extends Component {
     currentPlayer: false //false is X, true is O
   }
 
-//TODO ONCLICK SET GRID value
+//TODO
 //EVALUATE RESULTS
+//RESTART BUTTON
 
+setPlayer = () => {
+  this.setState(prevState => ({currentPlayer: !prevState.currentPlayer}));
+}
 
   render() {
     return (
@@ -19,7 +23,7 @@ class App extends Component {
         <header className="Header">
           <h1>Tic Tac Toe</h1>
           <Status player={this.state.currentPlayer} />
-          <Board player={this.state.currentPlayer} />
+          <Board player={this.state.currentPlayer} whoIsNext={this.setPlayer}/>
         </header>
       </div>
     );

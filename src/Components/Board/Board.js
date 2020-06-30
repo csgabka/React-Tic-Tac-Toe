@@ -3,8 +3,6 @@ import classes from './Board.module.css';
 
 import Grid from './Grid/Grid';
 
-
-
 class Board extends Component {
   state = {
     grids : {
@@ -18,19 +16,45 @@ class Board extends Component {
       '7': null,
       '8': null
     }
+
   }
 
-    clickHandler = (index) => {
-       let updatedGrids = {...this.state.grids};
-       updatedGrids[index] = 'X';
-       this.setState({grids: updatedGrids});
-       this.props.setPlayer();
+    clickHandler = (index, event) => {
+      if (this.state.grids[index] === null) {
+        let updatedGrids = {...this.state.grids};
+        updatedGrids[index] = this.props.player;
+        this.setState({grids: updatedGrids});
+        this.props.whoIsNext();
+        let classesForCircle = [classes.Grid, classes.Circle];
+        let classesForX = [classes.Grid, classes.X];
+        (this.props.player) ?
+        event.target.className = classesForCircle.join(' ') :
+        event.target.className = classesForX.join(' ');
+      }
+    }
+
+    hoverNextPlayer = (index, event) => {
+      if (this.state.grids[index] === null) {
+        let classesForCircle = [classes.Grid, classes.Circle];
+        let classesForX = [classes.Grid, classes.X];
+        (this.props.player) ?
+        event.target.className = classesForCircle.join(' ') :
+        event.target.className = classesForX.join(' ');
+      }
+    }
+
+    stopHoverNextPlayer = (index, event) => {
+      if (this.state.grids[index] === null) {
+        event.target.className = classes.Grid;
+      }
     }
 
 render() {
   let grids = Object.values(this.state.grids)
   .map((value, index) => <Grid
-  clicked={(event) => this.clickHandler(index)}
+  clicked={(event) => this.clickHandler(index, event)}
+  hovered={(event) => this.hoverNextPlayer(index, event)}
+  stopHovered={(event) => this.stopHoverNextPlayer(index, event)}
   key={index}
   value={value}
   currentPlayer={this.props.player}

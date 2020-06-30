@@ -3,8 +3,8 @@
   padding: 8px;
   margin: 10px;
   border: 1px grey solid;
-  border-radius: 25px;
-  box-shadow: 2px 1px grey;
+  border-radius: 5px;
+  box-shadow: 2px 1px 4px #FFF;
   box-sizing: border-box;
 }
 

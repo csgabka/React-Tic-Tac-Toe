@@ -1,37 +1,19 @@
-import React, { Component } from 'react';
-import classes from './Grid.module.css';
+import React from 'react';
+import classes from '../../Board/Board.module.css';
 
-class Grid extends Component {
-
-  hoverNextPlayer(event) {
-    let classesForCircle = [classes.Grid, classes.Circle];
-    let classesForX = [classes.Grid, classes.X];
-    (this.props.currentPlayer) ?
-    event.target.className = classesForCircle.join(' ') :
-    event.target.className = classesForX.join(' ');
-  }
-
-  StopHoverNextPlayer(event) {
-    event.target.className = classes.Grid;
-  }
-
-
-  render() {
-
+const grid = (props) => {
     return (
-      <div onClick={this.props.clicked}
+      <div onClick={props.clicked}
       className={classes.Grid}
-      onMouseOver={(event) => this.hoverNextPlayer(event)}
-      onMouseLeave={(event) => this.StopHoverNextPlayer(event)}>
-        {this.props.value}
+      onMouseOver={props.hovered}
+      onMouseLeave={props.stopHovered}>
+        {props.value}
       </div>
     );
   }
 
 
-};
 
 
 
-
-export default Grid;
+export default grid;
