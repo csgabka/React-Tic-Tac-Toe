@@ -1,0 +1,13 @@
+.Button {
+  z-index: 999;
+  cursor: pointer;
+  background-color: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.Button:hover {
+  transform: scale(1.1);
+}

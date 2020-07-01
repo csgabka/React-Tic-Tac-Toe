@@ -1,0 +1,6 @@
+.Modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(76, 175, 80, 0.3);
+}
