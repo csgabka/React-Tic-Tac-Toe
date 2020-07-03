@@ -3,6 +3,7 @@ import classes from '../../Board/Board.module.css';
 
 const grid = (props) => {
     return (
+
       <div onClick={props.clicked}
       className={classes.Grid}
       onMouseOver={props.hovered}
@@ -11,9 +12,5 @@ const grid = (props) => {
       </div>
     );
   }
-
-
-
-
 
 export default grid;

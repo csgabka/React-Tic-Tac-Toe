@@ -1,4 +1,5 @@
 .Button {
+  position: fixed;
   z-index: 999;
   cursor: pointer;
   background-color: 1px solid black;
