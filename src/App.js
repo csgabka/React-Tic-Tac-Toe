@@ -55,10 +55,11 @@ updateGridHandler = (index) => {
   this.setState(prevState => ({currentPlayer: !prevState.currentPlayer,
      grids: updatedGrids}),
      () => {
-       this.checkWin();
-       this.checkDraw();
-      }
-    );
+        this.checkDraw();
+        this.checkWin();
+       });
+      
+
   }
 
 
