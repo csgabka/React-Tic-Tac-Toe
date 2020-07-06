@@ -1,0 +1,57 @@
+:root {
+    --grid-size: 90px;
+    --grid-content: calc(var(--grid-size) * 0.9);
+  }
+
+.Grid {
+  box-sizing: border-box;
+  width: var(--grid-size);
+  height: var(--grid-size);
+  border: 1px solid #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Grid:hover {
+  border: 3px solid black;
+}
+
+.Grid.X::before,
+.Grid.X::after
+ {
+ 	position: absolute;
+ 	content: '';
+	background-color: lightgrey;
+  width: calc(var(--grid-content)*0.1);
+  height: var(--grid-content);
+}
+
+.Grid.X::before {
+	transform: rotate(45deg);
+}
+
+.Grid.X::after {
+	transform: rotate(-45deg);
+}
+
+.Grid.Circle::before,
+.Grid.Circle::after {
+	position: absolute;
+ 	content: '';
+	border-radius: 50%;
+}
+
+.Grid.Circle::before {
+	width: calc(var(--grid-content)*0.9);
+	height: calc(var(--grid-content)*0.9);
+	background-color: lightgrey;
+}
+
+.Grid.Circle::after {
+	width: calc(var(--grid-content)*0.7);
+	height: calc(var(--grid-content)*0.7);
+	background-color: #282c34;
+}

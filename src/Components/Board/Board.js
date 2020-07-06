@@ -4,6 +4,8 @@ import classes from './Board.module.css';
 import Grid from './Grid/Grid';
 
 class Board extends Component {
+
+
   constructor() {
     super();
     this.clickHandler = this.clickHandler.bind(this);
@@ -17,6 +19,8 @@ class Board extends Component {
       if (this.props.grids[index] === null) {
         //update function callbacks
           this.props.updateGrid(index);
+
+
           }
   }
 
@@ -38,17 +42,14 @@ class Board extends Component {
 
 
 render() {
-  let grids = Object.values(this.props.grids)
-  .map((value, index) => <Grid
+  let grids = Object.keys(this.props.grids)
+  .map((gridKey, index) => <Grid
   clicked={(event) => this.clickHandler(index, event)}
   hovered={(event) => this.hoverNextPlayer(index, event)}
   stopHovered={(event) => this.stopHoverNextPlayer(index, event)}
   key={index}
-  value={value}
+  value={this.props.grids[gridKey]}
   currentPlayer={this.props.player}
-  
-
-
   />
   );
 

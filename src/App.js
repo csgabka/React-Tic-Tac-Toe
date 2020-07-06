@@ -58,9 +58,7 @@ updateGridHandler = (index) => {
         this.checkDraw();
         this.checkWin();
        });
-      
-
-  }
+}
 
 
   restartGame = () => {
