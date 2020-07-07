@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Grid.module.css';
+import classes from '../../Board/Board.module.css';
 
 const grid = (props) => {
   let blank = classes.Grid;

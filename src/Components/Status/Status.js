@@ -5,7 +5,7 @@ const status = (props) => {
 
   let nextPlayer = null;
   (props.player) ? nextPlayer = 'O' : nextPlayer = 'X';
-  let statusMessage = <p>Next player is: {nextPlayer}</p>;
+  let statusMessage = "Next player is: " + nextPlayer;
   if (props.message !== null) {
     statusMessage = props.message
   }

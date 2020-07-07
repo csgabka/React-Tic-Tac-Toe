@@ -63,5 +63,5 @@
 .Grid.Circle::after {
 	width: calc(var(--grid-content)*0.7);
 	height: calc(var(--grid-content)*0.7);
-	background-color: #282c34;
+	background-color: #669F56;
 }

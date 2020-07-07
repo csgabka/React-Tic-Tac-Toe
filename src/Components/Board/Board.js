@@ -5,7 +5,6 @@ import Grid from './Grid/Grid';
 
 class Board extends Component {
 
-
   constructor() {
     super();
     this.clickHandler = this.clickHandler.bind(this);
@@ -13,14 +12,9 @@ class Board extends Component {
     this.stopHoverNextPlayer = this.stopHoverNextPlayer.bind(this);
   }
 
-
-
     clickHandler = (index, event) => {
       if (this.props.grids[index] === null) {
-        //update function callbacks
           this.props.updateGrid(index);
-
-
           }
   }
 
@@ -61,9 +55,5 @@ render() {
 }
 
 }
-
-
-
-
 
 export default Board;

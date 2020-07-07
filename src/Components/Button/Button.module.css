@@ -1,14 +1,15 @@
 .Button {
-  position: fixed;
-  z-index: 999;
+  color: #334F2B;
+  position: relative;
   cursor: pointer;
-  background-color: 1px solid black;
   padding: 5px;
-  margin: 5px;
   border-radius: 5px;
   border: none;
+  z-index: 999 !important;
+  background-color: #B7D4AF;
 }
 
 .Button:hover {
   transform: scale(1.1);
+  background-color: #FFF;;
 }

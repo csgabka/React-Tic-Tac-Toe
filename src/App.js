@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-//TO DO!!!!!!!!!!!!
-//BUG! last step X wins it says checkDraw
-//restart button
 
 import Board from './Components/Board/Board';
 import Status from './Components/Status/Status';
@@ -39,7 +36,7 @@ class App extends Component {
 setMessageHandler = (param) => {
   switch(param) {
     case true:
-    this.setState({message: 'Circle is the winner', gameOver: true})
+    this.setState({message: 'Circle is the winner!', gameOver: true})
     break;
     case false:
     this.setState({message: 'X is the winner!', gameOver: true});
@@ -104,7 +101,7 @@ updateGridHandler = (index) => {
 
       <div className="App">
       {modal}
-        <header className="Header">
+        <div className="Content">
           <h1>Tic Tac Toe</h1>
           <Status player={this.state.currentPlayer}
           message={this.state.message} />
@@ -113,9 +110,8 @@ updateGridHandler = (index) => {
           player={this.state.currentPlayer}
           grids={this.state.grids}
           updateGrid={(index) => this.updateGridHandler(index)}
-
           />
-        </header>
+        </div>
       </div>
 
     );
